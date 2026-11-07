@@ -1,0 +1,260 @@
+/* ---------- Basic setup ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* ---------- Header ---------- */
+header {
+  background-color: #ff7043;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 5px 0 0 0;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.menu-section {
+  flex: 3;
+}
+
+.cart-section {
+  flex: 1;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: fit-content;
+}
+
+/* ---------- Filter buttons ---------- */
+.filters {
+  margin-bottom: 10px;
+}
+
+.filter-btn {
+  padding: 8px 14px;
+  margin-right: 5px;
+  border: 1px solid #ff7043;
+  background-color: white;
+  color: #ff7043;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: #ff7043;
+  color: white;
+}
+
+/* ---------- Veg / Non-veg dots ---------- */
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid green;
+  border-radius: 3px;
+  position: relative;
+  vertical-align: middle;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.dot.nonveg {
+  border-color: red;
+}
+
+.dot.nonveg::after {
+  background-color: red;
+}
+
+.legend {
+  font-size: 14px;
+}
+
+/* ---------- Menu cards ---------- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.card .emoji {
+  font-size: 45px;
+}
+
+.card h3 {
+  margin: 8px 0 4px 0;
+  font-size: 17px;
+}
+
+.card .category {
+  color: gray;
+  font-size: 13px;
+}
+
+.card .price {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+/* Availability badge */
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 10px;
+  color: white;
+}
+
+.in-stock {
+  background-color: green;
+}
+
+.sold-out {
+  background-color: red;
+}
+
+.add-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border: none;
+  background-color: #ff7043;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* ---------- Cart ---------- */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.qty-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ff7043;
+  background-color: white;
+  color: #ff7043;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.empty-text {
+  color: gray;
+  font-size: 14px;
+}
+
+.bill {
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+.bill p {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.bill .total {
+  font-weight: bold;
+  font-size: 17px;
+  border-top: 1px solid #ccc;
+  padding-top: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.order-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Token after order */
+.token-box {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.token-box .token {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff7043;
+  border: 2px dashed #ff7043;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+
+/* ---------- Small screens (mobile) ---------- */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Cafeteria Ordering System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>🍴 Campus Cafeteria</h1>
+    <p>Order in your short break. No more long queues!</p>
+  </header>
+
+  <div class="container">
+
+    <!-- LEFT SIDE : MENU -->
+    <section class="menu-section">
+      <h2>Today's Menu</h2>
+
+      <!-- Category filter buttons -->
+      <div class="filters">
+        <button class="filter-btn active" onclick="showMenu('All', this)">All</button>
+        <button class="filter-btn" onclick="showMenu('Breakfast', this)">Breakfast</button>
+        <button class="filter-btn" onclick="showMenu('Lunch', this)">Lunch</button>
+        <button class="filter-btn" onclick="showMenu('Snacks', this)">Snacks</button>
+        <button class="filter-btn" onclick="showMenu('Beverages', this)">Beverages</button>
+      </div>
+
+      <!-- Legend for veg / non-veg -->
+      <p class="legend">
+        <span class="dot veg"></span> Veg &nbsp;&nbsp;
+        <span class="dot nonveg"></span> Non-Veg
+      </p>
+
+      <!-- Menu cards will come here using JavaScript -->
+      <div id="menuGrid" class="menu-grid"></div>
+    </section>
+
+    <!-- RIGHT SIDE : CART -->
+    <section class="cart-section">
+      <h2>🛒 Your Cart</h2>
+
+      <div id="cartItems"></div>
+
+      <div class="bill">
+        <p>Subtotal: <span id="subtotal">₹0.00</span></p>
+        <p>Tax (5%): <span id="tax">₹0.00</span></p>
+        <p class="total">Final Bill: <span id="total">₹0.00</span></p>
+      </div>
+
+      <!-- Pickup time slot -->
+      <label for="slot"><b>Pickup Time Slot:</b></label>
+      <select id="slot">
+        <option value="">-- Select break timing --</option>
+        <option value="10:30 AM - 10:45 AM">10:30 AM - 10:45 AM (Short Break)</option>
+        <option value="12:30 PM - 01:15 PM">12:30 PM - 01:15 PM (Lunch Break)</option>
+        <option value="02:45 PM - 03:00 PM">02:45 PM - 03:00 PM (Evening Break)</option>
+        <option value="04:30 PM - 04:45 PM">04:30 PM - 04:45 PM (Last Break)</option>
+      </select>
+
+      <button class="order-btn" onclick="placeOrder()">Place Order</button>
+
+      <!-- Order token will show here -->
+      <div id="tokenBox" class="token-box"></div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>CSE326 Project | Campus Cafeteria Ordering System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
